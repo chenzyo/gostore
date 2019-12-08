@@ -7,4 +7,9 @@ func migration() {
 	DB.AutoMigrate(&User{})
 	DB.AutoMigrate(&UserInfo{})
 	DB.AutoMigrate(&Commodity{})
+	DB.AutoMigrate(&CommodityProperty{})
+	DB.AutoMigrate(&CommodityPropertyIndex{})
+	DB.AutoMigrate(&CommodityPropertyValue{})
+	DB.AutoMigrate(&CommoditySpecificationIndex{})
+	DB.AutoMigrate(&Product{})
 }

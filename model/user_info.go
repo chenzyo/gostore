@@ -2,13 +2,13 @@ package model
 
 import "time"
 
-// User 用户模型
+// UserInfo 用户明细模型
 type UserInfo struct {
 	Model
 	User     User
 	UserId   uint      `gorm:"not null;default:0;comment:'会员id'"`
 	Mobile   string    `gorm:"size:32;not null;default:'';comment:'手机号'"`
-	Email    string    `gorm:"size:128;not null;default:'';comment:'邮箱'`
+	Email    string    `gorm:"size:128;not null;default:'';comment:'邮箱'"`
 	Birthday time.Time `gorm:"not null;default:'0000-00-00 00:00:00';comment:'生日年月'"`
 	RealName string    `gorm:"size:64;not null;default:'';comment:'真实姓名'"`
 	NickName string    `gorm:"size:64;not null;default:'';comment:'昵称'"`

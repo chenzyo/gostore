@@ -12,7 +12,7 @@ type User struct {
 	UserName       string    `gorm:"size:64;not null;default:'';comment:'用户名账号'"`
 	PasswordDigest string    `gorm:"size:256;not null;default:'';comment:'密码'"`
 	Enabled        int8      `gorm:"not null;default:'1';comment:'是否启用【1:启用 2:禁用】'"`
-	Locked         int8      `gorm:"not null;default:'2';comment:'是否启用【1:锁定 2:非锁定】'"`
+	Locked         int8      `gorm:"not null;default:'2';comment:'是否锁定【1:锁定 2:非锁定】'"`
 	VerifiedAt     time.Time `gorm:"not null;default:'0000-00-00 00:00:00';comment:'验证时间'"`
 }
 
@@ -31,8 +31,6 @@ const (
 	Inactive string = "inactive"
 	// Suspend 被封禁用户
 	Suspend string = "suspend"
-
-	Sign string = "tokenstring"
 )
 
 // GetUser 用ID获取用户

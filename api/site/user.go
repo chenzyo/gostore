@@ -3,7 +3,7 @@ package site
 import (
 	"singo/api"
 	"singo/serializer"
-	"singo/service/site/user_service"
+	"singo/service/site/user"
 
 	"github.com/gin-contrib/sessions"
 	"github.com/gin-gonic/gin"
@@ -11,7 +11,7 @@ import (
 
 // UserRegister 用户注册接口
 func UserRegister(c *gin.Context) {
-	var service user_service.UserRegisterService
+	var service user.UserRegisterService
 	if err := c.ShouldBind(&service); err == nil {
 		res := service.Register()
 		c.JSON(200, res)
@@ -22,7 +22,7 @@ func UserRegister(c *gin.Context) {
 
 // UserLogin 用户登录接口
 func UserLogin(c *gin.Context) {
-	var service user_service.UserLoginService
+	var service user.UserLoginService
 	if err := c.ShouldBind(&service); err == nil {
 		res := service.Login(c)
 		c.JSON(200, res)

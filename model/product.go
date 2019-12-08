@@ -1,6 +1,6 @@
 package model
 
-// Commodity 商品模型
+// Product 货品模型
 type Product struct {
 	Model
 	CommodityId    uint    `gorm:"not null;default:'0';comment:'商品id'"`

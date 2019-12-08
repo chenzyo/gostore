@@ -41,8 +41,9 @@ func ErrorResponse(err error) serializer.Response {
 			)
 		}
 	}
-	if _, ok := err.(*json.UnmarshalTypeError); ok {
-		return serializer.ParamErr("JSON类型不匹配", err)
+	if ve2, ok := err.(*json.UnmarshalTypeError); ok {
+
+		return serializer.ParamErr(ve2.Field+"类型不正确", err)
 	}
 
 	return serializer.ParamErr("参数错误", err)

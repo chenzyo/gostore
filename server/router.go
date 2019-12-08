@@ -3,6 +3,7 @@ package server
 import (
 	"os"
 	"singo/api"
+	"singo/api/admin"
 	"singo/api/site"
 	"singo/middleware"
 
@@ -38,5 +39,11 @@ func NewRouter() *gin.Engine {
 			auth.DELETE("user/logout", site.UserLogout)
 		}
 	}
+
+	adm := r.Group("/api/v1/admin")
+	{
+		adm.POST("commodity/create", admin.CommdityCreate)
+	}
+
 	return r
 }
