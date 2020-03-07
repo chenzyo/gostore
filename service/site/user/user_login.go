@@ -6,7 +6,6 @@ import (
 	"singo/serializer"
 	"time"
 
-	jwtgo "github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
 )
 
@@ -43,8 +42,9 @@ func (service *UserLoginService) Login(c *gin.Context) serializer.Response {
 
 // 生成令牌
 func (service *UserLoginService) generateToken(user model.User) (string, error) {
-	j := middleware.NewJWT()
-	claims := middleware.CustomClaims{
+	j := middleware.Jwt{}
+
+	claims := middleware.Msg{
 		ID: user.ID,
 		StandardClaims: jwtgo.StandardClaims{
 			NotBefore: int64(time.Now().Unix() - 1000), // 签名生效时间

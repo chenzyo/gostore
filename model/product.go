@@ -6,10 +6,11 @@ type Product struct {
 	CommodityId    uint    `gorm:"not null;default:'0';comment:'商品id'"`
 	Name           string  `gorm:"size:64;not null;default:'';comment:'商品名称'"`
 	SpecInfo       string  `gorm:"size:256;not null;default:'';comment:'货品规格信息'"`
-	Price          float64 `gorm:"type:decimal(10,2) unsigned;size:255;not null;default:'0';comment:'销售价'"`
-	MarketPrice    float64 `gorm:"type:decimal(10,2) unsigned;size:255;not null;default:'0';comment:'市场价'"`
-	CostPrice      float64 `gorm:"type:decimal(10,2) unsigned;size:255;not null;default:'0';comment:'成本价'"`
+	Price          float64 `gorm:"type:decimal(10,2) unsigned;not null;default:'0';comment:'销售价'"`
+	MarketPrice    float64 `gorm:"type:decimal(10,2) unsigned;not null;default:'0';comment:'市场价'"`
+	CostPrice      float64 `gorm:"type:decimal(10,2) unsigned;not null;default:'0';comment:'成本价'"`
 	Stock          uint    `gorm:"not null;default:'0';comment:'库存'"`
+	StockAlarm     uint    `gorm:"not null;default:'0';comment:'库存预警'"`
 	SkuNo          string  `gorm:"size:64;not null;default:'';comment:'货品编号'"`
 	DefaultImageId uint    `gorm:"not null;default:'0';comment:'默认商品图id'"`
 	SellingStatus  int8    `gorm:"not null;default:'1';comment:'销售状态【1:上架 2:下架】'"`

@@ -8,3 +8,7 @@ type CommodityPropertyValue struct {
 	PropertyId      uint `gorm:"not null;default:'0';comment:'商品属性id'"`
 	PropertyValueId uint `gorm:"not null;default:'0';comment:'商品属性值id'"`
 }
+
+func (c *CommodityPropertyValue) TableName() string {
+	return "commodity_property_value"
+}

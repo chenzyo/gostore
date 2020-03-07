@@ -1,18 +1,18 @@
 module singo
 
-go 1.12
+go 1.13
 
 require (
-	github.com/codegangsta/negroni v1.0.0
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/gin-contrib/cors v1.3.0
-	github.com/gin-contrib/sessions v0.0.0-20190512062852-3cb4c4f2d615
-	github.com/gin-gonic/gin v1.4.0
-	github.com/go-redis/redis v6.15.3+incompatible
-	github.com/jinzhu/gorm v1.9.10
+	github.com/gin-contrib/sessions v0.0.3
+	github.com/gin-gonic/gin v1.5.0
+	github.com/go-redis/redis v6.15.6+incompatible
+	github.com/jinzhu/gorm v1.9.12
 	github.com/joho/godotenv v1.3.0
-	golang.org/x/crypto v0.0.0-20190701094942-4def268fd1a4
-	golang.org/x/oauth2 v0.0.0-20190226205417-e64efc72b421
+	github.com/onsi/ginkgo v1.11.0 // indirect
+	github.com/onsi/gomega v1.8.1 // indirect
+	golang.org/x/crypto v0.0.0-20200128174031-69ecbb4d6d5d
 	gopkg.in/go-playground/validator.v8 v8.18.2
-	gopkg.in/yaml.v2 v2.2.2
+	gopkg.in/yaml.v2 v2.2.8
 )

@@ -1,7 +1,7 @@
 package model
 
-// CommodityPropertyIndex 商品属性关联模型
-type CommodityPropertyIndex struct {
+// CommodityPropertyRelation 商品属性关联模型
+type CommodityPropertyRelation struct {
 	Model
 	CommodityId     uint `gorm:"not null;default:'0';comment:'商品id'"`
 	ProductId       uint `gorm:"not null;default:'0';comment:'货品id'"`
@@ -9,6 +9,6 @@ type CommodityPropertyIndex struct {
 	PropertyValueId uint `gorm:"not null;default:'0';comment:'商品属性值id'"`
 }
 
-func (c *CommodityPropertyIndex) TableName() string {
-	return "commodity_property_indexes"
+func (c *CommodityPropertyRelation) TableName() string {
+	return "commodity_property_relations"
 }

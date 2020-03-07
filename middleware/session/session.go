@@ -1,4 +1,4 @@
-package middleware
+package session
 
 import (
 	"github.com/gin-contrib/sessions"

@@ -2,13 +2,14 @@ package admin
 
 import (
 	"singo/api"
-	"singo/service/admin/commodity"
+	"singo/service/site/user"
 
 	"github.com/gin-gonic/gin"
 )
 
-func CommodityCreate(c *gin.Context) {
-	var service commodity.CommodityCreateService
+//AdminLogin 管理员账户登录
+func AccountLogin(c *gin.Context) {
+	var service user.UserLoginService
 	if err := c.ShouldBind(&service); err == nil {
 		res := service.Login(c)
 		c.JSON(200, res)
