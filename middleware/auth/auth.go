@@ -25,7 +25,7 @@ func CurrentUser(platform string) gin.HandlerFunc {
 			c.Next()
 			return
 		}
-		//检查是否存在用户，如果存在，保存用户信息至context中
+		//检查是否存在用户，如果存在，保存用户信息至session中
 		c.Set("user", nil)
 		if claims.UserID != 0 {
 			if platform == "site" {

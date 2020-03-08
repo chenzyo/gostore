@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bdf27982-669b-4ea2-a092-49dd0ecbb783" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/admin/commodity_category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serializer/site/commodity_category.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/admin/commodity_category/create_commodity_category.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/main.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/site/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/api/site/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conf/locales/zh-cn.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/conf/locales/zh-cn.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/middleware/auth/auth.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/auth/auth.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/jwt/jwt.go" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/jwt/jwt.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/admin_account.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/admin_account.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/model.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/model.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/user_attribute.go" beforeDir="false" afterPath="$PROJECT_DIR$/model/user_attribute.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serializer/common.go" beforeDir="false" afterPath="$PROJECT_DIR$/serializer/common.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serializer/user.go" beforeDir="false" afterPath="$PROJECT_DIR$/serializer/site/user.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/router.go" beforeDir="false" afterPath="$PROJECT_DIR$/server/router.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/admin/account/account_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/admin/account/account_login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site/user/user_login.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/site/user/user_login.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/site/user/user_register.go" beforeDir="false" afterPath="$PROJECT_DIR$/service/site/user/user_register.go" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -34,8 +16,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/middleware/auth/auth.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+            <state relative-caret-position="615">
+              <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
               <folding>
                 <element signature="e#14#123#0" expanded="true" />
               </folding>
@@ -44,10 +26,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="442">
+                <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/serializer/common.go">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="258">
-              <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+            <state relative-caret-position="811">
+              <caret line="33" column="21" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -168,7 +162,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/service/user_register_service.go" />
         <option value="$PROJECT_DIR$/middleware/auth_jwt.go" />
         <option value="$PROJECT_DIR$/service/user_login_service.go" />
         <option value="$PROJECT_DIR$/model/init.go" />
@@ -201,7 +194,6 @@
         <option value="$PROJECT_DIR$/model/migration.go" />
         <option value="$PROJECT_DIR$/middleware/jwt/jwt.go" />
         <option value="$PROJECT_DIR$/service/site/user/user_login.go" />
-        <option value="$PROJECT_DIR$/middleware/auth/auth.go" />
         <option value="$PROJECT_DIR$/api/main.go" />
         <option value="$PROJECT_DIR$/model/model.go" />
         <option value="$PROJECT_DIR$/model/user_attribute.go" />
@@ -219,6 +211,8 @@
         <option value="$PROJECT_DIR$/service/admin/commodity_category/create_commodity_category.go" />
         <option value="$PROJECT_DIR$/service/site/user/user_register.go" />
         <option value="$PROJECT_DIR$/serializer/common.go" />
+        <option value="$PROJECT_DIR$/middleware/auth/auth.go" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -368,13 +362,6 @@
     <proxy>https://goproxy.cn</proxy>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../../pkg/mod/golang.org/x/crypto@v0.0.0-20200128174031-69ecbb4d6d5d/bcrypt/bcrypt.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="88" column="5" selection-start-line="88" selection-start-column="5" selection-end-line="88" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/middleware/session/session.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="260">
@@ -770,16 +757,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/middleware/auth/auth.go">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="59" column="36" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
-          <folding>
-            <element signature="e#14#123#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/service/site/user/user_register.go">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="517">
@@ -789,8 +766,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/serializer/common.go">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="33" column="21" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
+        <state relative-caret-position="811">
+          <caret line="33" column="21" selection-start-line="33" selection-start-column="15" selection-end-line="33" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/middleware/auth/auth.go">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
+          <folding>
+            <element signature="e#14#123#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="442">
+            <caret line="17" column="12" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
