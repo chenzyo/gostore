@@ -16,12 +16,14 @@ func CurrentUser(platform string) gin.HandlerFunc {
 		kv := strings.Split(token, " ")
 		if len(kv) != 2 || kv[0] != "Bearer" {
 			c.Next()
+			return
 		}
 		claims := jwt.Msg{}
 		// parseToken 解析token包含的信息
 		claims, err := jwt.Decode(kv[1])
 		if err != nil {
 			c.Next()
+			return
 		}
 		//检查是否存在用户，如果存在，保存用户信息至context中
 		c.Set("user", nil)
@@ -41,6 +43,7 @@ func CurrentUser(platform string) gin.HandlerFunc {
 			}
 		}
 		c.Next()
+		return
 	}
 }
 

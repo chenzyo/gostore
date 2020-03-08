@@ -7,11 +7,11 @@ import (
 )
 
 var (
-	secret = []byte("this is a test secret")
+	secret = []byte("9361a42e1345b78fa869f00c1d8b11bc")
 )
 
 type Msg struct {
-	UserID   int32  `json:"userId"`
+	UserID   uint   `json:"userId"`
 	UserName string `json:"username"`
 }
 

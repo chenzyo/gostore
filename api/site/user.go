@@ -12,7 +12,7 @@ import (
 // UserRegister 用户注册接口
 func UserRegister(c *gin.Context) {
 	var service user.UserRegisterService
-	if err := c.ShouldBind(&service); err == nil {
+	if err := c.ShouldBindJSON(&service); err == nil {
 		res := service.Register()
 		c.JSON(200, res)
 	} else {
@@ -31,12 +31,12 @@ func UserLogin(c *gin.Context) {
 	}
 }
 
-// UserMe 用户详情
-func UserMe(c *gin.Context) {
-	user := api.CurrentUser(c)
-	res := serializer.BuildUserResponse(*user)
-	c.JSON(200, res)
-}
+//// UserMe 用户详情
+//func UserMe(c *gin.Context) {
+//	user := api.CurrentUser(c)
+//	res := serializer.BuildUserResponse(*user)
+//	c.JSON(200, res)
+//}
 
 // UserLogout 用户登出
 func UserLogout(c *gin.Context) {

@@ -1,5 +1,9 @@
 package model
 
+import (
+	"golang.org/x/crypto/bcrypt"
+)
+
 // AdminAccount 管理员账户模型
 type AdminAccount struct {
 	Model
@@ -21,4 +25,10 @@ func GetAdminUser(ID interface{}) (AdminAccount, error) {
 	var adminUser AdminAccount
 	result := DB.First(&adminUser, ID)
 	return adminUser, result.Error
+}
+
+// CheckPassword 校验密码
+func (user *AdminAccount) CheckPassword(password string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(user.PasswordDigest), []byte(password))
+	return err == nil
 }

@@ -16,19 +16,13 @@ type TrackedErrorResponse struct {
 	TrackID string `json:"track_id"`
 }
 
-// 三位数错误编码为复用http原本含义
-// 五位数错误编码为应用自定义错误
-// 五开头的五位数错误编码为服务器端错误，比如数据库操作失败
-// 四开头的五位数错误编码为客户端错误，有时候是客户端代码写错了，有时候是用户操作错误
 const (
 	// CodeCheckLogin 未登录
-	CodeCheckLogin = 401
+	CodeCheckLogin = 40101
 	// CodeNoRightErr 未授权访问
-	CodeNoRightErr = 403
+	CodeNoRightErr = 40301
 	// CodeDBError 数据库操作失败
 	CodeDBError = 50001
-	// CodeEncryptError 加密失败
-	CodeEncryptError = 50002
 	//CodeParamErr 各种奇奇怪怪的参数错误
 	CodeParamErr = 40001
 )
@@ -37,7 +31,7 @@ const (
 func CheckLogin() Response {
 	return Response{
 		Code: CodeCheckLogin,
-		Msg:  "未登录",
+		Msg:  "身份认证失效",
 	}
 }
 

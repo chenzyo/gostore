@@ -1,10 +1,9 @@
 package user
 
 import (
-	"singo/middleware"
+	"singo/middleware/jwt"
 	"singo/model"
 	"singo/serializer"
-	"time"
 
 	"github.com/gin-gonic/gin"
 )
@@ -42,16 +41,11 @@ func (service *UserLoginService) Login(c *gin.Context) serializer.Response {
 
 // 生成令牌
 func (service *UserLoginService) generateToken(user model.User) (string, error) {
-	j := middleware.Jwt{}
 
-	claims := middleware.Msg{
-		ID: user.ID,
-		StandardClaims: jwtgo.StandardClaims{
-			NotBefore: int64(time.Now().Unix() - 1000), // 签名生效时间
-			ExpiresAt: int64(time.Now().Unix() + 3600), // 过期时间 一小时
-			Issuer:    "brand",                         //签名的发行者
-		},
+	msg := jwt.Msg{
+		UserID:   user.ID,
+		UserName: user.UserName,
 	}
 
-	return j.CreateToken(claims)
+	return jwt.Encode(msg)
 }

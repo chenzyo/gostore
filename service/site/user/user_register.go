@@ -3,6 +3,7 @@ package user
 import (
 	"singo/model"
 	"singo/serializer"
+	"singo/serializer/site"
 	"time"
 )
 
@@ -45,7 +46,7 @@ func (service *UserRegisterService) Register() serializer.Response {
 	// 加密密码
 	if err := user.SetPassword(service.Password); err != nil {
 		return serializer.Err(
-			serializer.CodeEncryptError,
+			serializer.CodeDBError,
 			"密码加密失败",
 			err,
 		)
@@ -59,11 +60,12 @@ func (service *UserRegisterService) Register() serializer.Response {
 		return serializer.ParamErr("注册失败", err)
 	}
 
-	userInfo := model.UserInfo{
+	userInfo := model.UserAttribute{
 		UserId:   user.ID,
-		Mobile:   service.UserName,
+		Mobile:   "",
 		NickName: service.UserName,
 		Gender:   3,
+		Birthday: nil,
 		//Status:   model.Active,
 	}
 
@@ -73,5 +75,5 @@ func (service *UserRegisterService) Register() serializer.Response {
 	}
 
 	tx.Commit()
-	return serializer.BuildUserResponse(user)
+	return site.BuildUserResponse(user)
 }

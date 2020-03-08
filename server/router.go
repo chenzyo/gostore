@@ -38,18 +38,29 @@ func NewRouter() *gin.Engine {
 		v1.POST("user/login", site.UserLogin)
 
 		// 需要登录保护的
-		authRequire := v1.Group("").Use(auth.AuthRequired())
+		authRequire := v1.Group("")
+		authRequire.Use(auth.AuthRequired())
 		{
 			// User Routing
-			authRequire.GET("user/me", site.UserMe)
 			authRequire.DELETE("user/logout", site.UserLogout)
 		}
 	}
 
-	adm := r.Group("/api/v1/admin").Use(auth.AuthRequired())
+	adm := r.Group("/api/v1/admin")
 	{
 		adm.Use(auth.CurrentUser("admin"))
-		adm.POST("commodity/create", admin.CommodityCreate)
+		adm.POST("account/login", admin.AccountLogin)
+
+		adminAuthRequire := adm.Group("")
+		adminAuthRequire.Use(auth.AuthRequired())
+		{
+			//商品管理
+			adminAuthRequire.POST("commodity/create", admin.CommodityCreate)
+
+			//商品分类管理
+			adminAuthRequire.POST("commodity/category/create", admin.CreateCommodityCategory)
+
+		}
 	}
 
 	return r
