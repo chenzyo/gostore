@@ -16,19 +16,19 @@ type AdminAccount struct {
 	IsSuper        int8   `gorm:"not null;default:'2';comment:'是否管理员【1:是 2:否】'"`
 }
 
-func (c *AdminAccount) TableName() string {
+func (adminAccount *AdminAccount) TableName() string {
 	return "admin_users"
 }
 
 // GetAdminUser 用ID获取用户
 func GetAdminUser(ID interface{}) (AdminAccount, error) {
 	var adminUser AdminAccount
-	result := DB.First(&adminUser, ID)
+	result := DB.Select("id,user_name,role_id,enabled,is_super").First(&adminUser, ID)
 	return adminUser, result.Error
 }
 
 // CheckPassword 校验密码
-func (user *AdminAccount) CheckPassword(password string) bool {
-	err := bcrypt.CompareHashAndPassword([]byte(user.PasswordDigest), []byte(password))
+func (adminAccount *AdminAccount) CheckPassword(password string) bool {
+	err := bcrypt.CompareHashAndPassword([]byte(adminAccount.PasswordDigest), []byte(password))
 	return err == nil
 }

@@ -2,14 +2,14 @@ package admin
 
 import (
 	"singo/api"
-	"singo/service/site/user"
+	"singo/service/admin/account"
 
 	"github.com/gin-gonic/gin"
 )
 
 //AdminLogin 管理员账户登录
 func AccountLogin(c *gin.Context) {
-	var service user.UserLoginService
+	var service account.AccountLoginService
 	if err := c.ShouldBind(&service); err == nil {
 		res := service.Login(c)
 		c.JSON(200, res)

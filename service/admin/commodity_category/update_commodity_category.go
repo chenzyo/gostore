@@ -1,7 +1,6 @@
 package commodity_category
 
 import (
-	"fmt"
 	"singo/model"
 	"singo/serializer"
 	"singo/serializer/site"
@@ -9,15 +8,15 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type CreateCommodityCategoryService struct {
+type UpdateCommodityCategoryService struct {
+	Id       uint   `form:"id" json:"id" `
 	Name     string `form:"name" json:"name" binding:"required,min=1,max=64"`
-	ParentId uint   `form:"parent_id" json:"parent_id" binding:"numeric"`
+	ParentId uint   `form:"parent_id" json:"parent_id" `
 }
 
 // valid 验证表单
-func (service *CreateCommodityCategoryService) valid() *serializer.Response {
+func (service *UpdateCommodityCategoryService) valid() *serializer.Response {
 	commodityCategory := model.CommodityCategory{}
-	fmt.Println(service.ParentId)
 	if service.ParentId != 0 {
 		if err := model.DB.Where("id = ?", service.ParentId).First(&commodityCategory).Error; err != nil {
 			return &serializer.Response{
@@ -30,7 +29,7 @@ func (service *CreateCommodityCategoryService) valid() *serializer.Response {
 }
 
 // Login 用户登录函数
-func (service *CreateCommodityCategoryService) Create(c *gin.Context) serializer.Response {
+func (service *UpdateCommodityCategoryService) Update(c *gin.Context) serializer.Response {
 
 	commodityCategory := model.CommodityCategory{
 		Name:     service.Name,

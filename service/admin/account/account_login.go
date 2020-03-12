@@ -17,7 +17,7 @@ type AccountLoginService struct {
 func (service *AccountLoginService) Login(c *gin.Context) serializer.Response {
 	var user model.AdminAccount
 
-	if err := model.DB.Where("user_name = ?", service.UserName).First(&user).Error; err != nil {
+	if err := model.DB.Select("id,user_name,password_digest").Where("user_name = ?", service.UserName).First(&user).Error; err != nil {
 		return serializer.ParamErr("账号或密码错误", nil)
 	}
 
